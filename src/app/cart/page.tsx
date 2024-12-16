@@ -7,7 +7,7 @@ import Image from 'next/image';
 const CartComponent = () => {
   const [quantities, setQuantities] = useState([1, 1, 1]);
 
-  const updateQuantity = (index:unknown, change:unknown) => {
+  const updateQuantity = (index:number, change:number) => {
     const newQuantities = [...quantities];
     newQuantities[index] = Math.max(1, newQuantities[index] + change);
     setQuantities(newQuantities);
