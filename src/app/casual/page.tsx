@@ -99,7 +99,6 @@ const products: Product[] = [
 
 const CasualFilters = () => {
   const [selectedColor, setSelectedColor] = useState("red");
-  const [activePage, setActivePage] = useState(1);
 
   const colors = ["red", "blue", "green", "yellow", "purple", "pink", "black", "white", "gray", "orange"];
   const sizes = [
@@ -275,29 +274,29 @@ const CasualFilters = () => {
         <hr className="border-gray-300 mb-6 mt-2" />
 
         {/* Pagination */}
-        <div className="flex justify-between items-center">
-          <button className="px-4 py-2 bg-white border border-gray-300 text-sm text-black rounded-xl flex items-center gap-2 hover:bg-black hover:text-gray-200 ">
-            <ArrowLeft size={16} /> Previous
-          </button>
-          <div className="flex items-center gap-2">
-            {[1, 2, 3, "...", 8, 9, 10].map((page : any, index) => (
-              <button
-                key={index}
-                className={`px-4 py-2 rounded-xl text-sm ${
-                  activePage === page
-                    ? "bg-gray-100 text-black"
-                    : "hover:bg-gray-100 text-gray-500"
-                }`}
-                onClick={() => setActivePage(page)}
-              >
-                {page}
-              </button>
-            ))}
-          </div>
-          <button className="px-4 py-2 bg-white border border-gray-300 text-sm text-black rounded-xl flex items-center gap-2 hover:bg-black hover:text-gray-200">
-            Next <ArrowRight size={16} />
-          </button>
-        </div>
+        {/* Pagination */}
+<div className="flex justify-between items-center">
+  <button className="px-4 py-2 bg-white border border-gray-300 text-sm text-black rounded-xl flex items-center gap-2 hover:bg-black hover:text-gray-200">
+    <ArrowLeft size={16} /> Previous
+  </button>
+
+  <div className="flex items-center gap-2">
+    {[1, 2, 3, "...", 8, 9, 10].map((page, index:number) => (
+      <button
+        key={index}
+        className="px-4 py-2 rounded-xl text-sm hover:bg-gray-100 text-gray-500"
+      >
+        {page}
+      </button>
+    ))}
+  </div>
+
+  <button className="px-4 py-2 bg-white border border-gray-300 text-sm text-black rounded-xl flex items-center gap-2 hover:bg-black hover:text-gray-200">
+    Next <ArrowRight size={16} />
+  </button>
+</div>
+
+
       </div>
     </div>
   );
