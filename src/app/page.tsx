@@ -12,7 +12,7 @@ export default function Home() {
       <section className="flex items-center justify-between px-24 py-4 relative">
         {/* Left Side Content */}
         <div className="w-1/2">
-          <h1 className="text-6xl font-extrabold leading-none">
+          <h1 className="text-6xl font-extrabold leading-none font-Integral CF">
             FIND CLOTHES <br />
             THAT MATCHES <br />
             YOUR STYLE
